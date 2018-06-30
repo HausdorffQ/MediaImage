@@ -51,7 +51,5 @@ function win_new(app_type,sel_paient){
 function win_close(sel){
     console.log(sel);
     $("#wt"+sel).remove();
-    $("#w"+sel).remove();
-    tab_click(2);
     
 }
