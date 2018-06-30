@@ -100,9 +100,9 @@ $(document).ready(function(){
 })
 
 function tab_click(id){
-    $(".tab.activeT").attr("class","tab noactiveT");
-    $("#wt"+id).attr("class","tab activeT");
     if($("#wt"+id).attr("id")){
+        $(".tab.activeT").attr("class","tab noactiveT");
+        $("#wt"+id).attr("class","tab activeT");
         var app_type=$("#wt"+id+">.tab_img").attr("src").split("/")[1].split("A")[0];
         app_type="#"+app_type+"T";
         $(".tool.active").hide();
