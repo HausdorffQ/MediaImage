@@ -81,15 +81,17 @@ $(document).ready(function(){
                     $("#right_window>.div_panel").append($("#w"+i));
                 }
             }
+            if(!($("#leftP>.display").attr("class"))){
+                $("#"+$("#leftP").children()[0].id).attr("class","windows display");
+            }
             $("#right_window").show();
         }else{
+            $("#leftP>.display").attr("class","windows");
             if($("#right_tab>.activeT").attr("id")){
                 $("#left_window>.div_panel>.display").attr("class","windows");
             }
-            for(var i=0;i<$("#right_window>.div_tab").children().length;i++){
-                $("#left_window>.div_tab").append($("#right_window>.div_tab").children()[i]);
-                $("#left_window>.div_panel").append($("#right_window>.div_panel").children()[i]);
-            }
+            $("#left_window>.div_tab").append($("#right_window>.div_tab").children());
+            $("#left_window>.div_panel").append($("#right_window>.div_panel").children());
             $("#right_window").hide();
             $("#left_window").css({width:"100%"});
         }
@@ -109,6 +111,12 @@ function tab_click(id){
         $(".tool.active").attr("class","tool noactive");
         $(app_type).show();
         $(app_type).attr("class","tool active");
+        var par=$("#wt"+id).parent();
+        var side="#"+$(par).attr("title")+"P";
+        if($(side+">.display").attr("id")){
+            $(side+">.display").attr("class","windows");
+        }
+        $("#w"+id).attr("class","windows display");
     }
 }
 
@@ -127,5 +135,17 @@ function tab_drop(ev)
         ev.preventDefault();
         var data=ev.dataTransfer.getData("Text");
         ev.target.appendChild(document.getElementById(data));
+        if($("#"+$(ev.target).attr("title")+"P>.display").attr("id")){
+            $("#"+$(ev.target).attr("title")+"P>.display").attr("class","windows");
+        }
+        $("#"+$(ev.target).attr("title")+"P").append($("#w"+data[2]));
+        $("#w"+data[2]).attr("class","windows display");
+
+        if((!($("#leftP>.display").attr("id")))&&($("#leftP").children())){
+            $($("#leftP").children()[0]).attr("class","windows display");
+        }
+        if((!($("#rightP>.display").attr("id")))&&($("#rightP").children())){
+            $($("#rightP").children()[0]).attr("class","windows display");
+        }
     }
 }
