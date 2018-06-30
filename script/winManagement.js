@@ -37,7 +37,7 @@ function win_new(app_type,sel_paient){
             }else{
                 $("#right_window>.div_tab").append(new_tab);
                 $("#rightP").append(new_w);
-                $("#rightP>.display").attr("class","windows");
+                $("#rightP>.display").attr("class","windows bn");
                 $("#w"+win_id).attr("class","windows display");
             }
         }
@@ -51,8 +51,15 @@ function win_new(app_type,sel_paient){
 
 function win_close(sel){
     $("#wt"+sel).remove();
-    if(!($(".activeT").attr("id"))){
-        tab_click(1);
+    $("#w"+sel).remove();
+    if((!($(".activeT").attr("id")))&&($("#leftP").children())){
+        tab_click($($("#leftP").children()[0]).attr("id")[1]);
+    }
+    if((!($("#leftP>.display").attr("id")))&&($("#leftP").children())){
+        $($("#leftP").children()[0]).attr("class","windows display");
+    }
+    if((!($("#rightP>.display").attr("id")))&&($("#rightP").children())){
+        $($("#rightP").children()[0]).attr("class","windows display");
     }
     
 }

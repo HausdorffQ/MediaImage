@@ -140,7 +140,7 @@ function tab_drop(ev)
             $("#"+$(ev.target).attr("title")+"P>.display").attr("class","windows");
         }
         $("#"+$(ev.target).attr("title")+"P").append($("#w"+data[2]));
-        $("#w"+data[2]).attr("class","windows display");
+        
 
         if((!($("#leftP>.display").attr("id")))&&($("#leftP").children())){
             $($("#leftP").children()[0]).attr("class","windows display");
