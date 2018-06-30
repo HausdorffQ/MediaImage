@@ -49,7 +49,9 @@ function win_new(app_type,sel_paient){
 }
 
 function win_close(sel){
-    console.log(sel);
     $("#wt"+sel).remove();
+    if(!($(".activeT").attr("id"))){
+        tab_click(1);
+    }
     
 }
