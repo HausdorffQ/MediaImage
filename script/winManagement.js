@@ -32,11 +32,12 @@ function win_new(app_type,sel_paient){
             if($("#left_window>.div_tab").children().length<3){
                 $("#left_window>.div_tab").append(new_tab);
                 $("#leftP").append(new_w);
-                $(".windows.display").attr("class","windows");
+                $("#leftP>.display").attr("class","windows");
                 $("#w"+win_id).attr("class","windows display");
             }else{
                 $("#right_window>.div_tab").append(new_tab);
                 $("#rightP").append(new_w);
+                $("#rightP>.display").attr("class","windows");
                 $("#w"+win_id).attr("class","windows display");
             }
         }

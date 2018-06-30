@@ -87,9 +87,10 @@ $(document).ready(function(){
             $("#right_window").show();
         }else{
             $("#leftP>.display").attr("class","windows");
-            if($("#right_tab>.activeT").attr("id")){
-                $("#left_window>.div_panel>.display").attr("class","windows");
-            }
+            //if($("#right_tab>.activeT").attr("id")){
+            //   $("#left_window>.div_panel>.display").attr("class","windows");
+            //}
+            tab_click($("#rightP>.display").attr("id")[1]);
             $("#left_window>.div_tab").append($("#right_window>.div_tab").children());
             $("#left_window>.div_panel").append($("#right_window>.div_panel").children());
             $("#right_window").hide();
