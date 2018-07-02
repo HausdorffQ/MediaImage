@@ -98,8 +98,20 @@ $(document).ready(function(){
         }
     })
 
+    $("#infoP").on("mousewheel DOMMouseScroll", function (e) {
+        var delta = (e.originalEvent.wheelDelta && (e.originalEvent.wheelDelta > 0 ? 1 : -1)) || 
+                    (e.originalEvent.detail && (e.originalEvent.detail > 0 ? -1 : 1));
+                            var top=parseInt($(".divinfo").css("top"));
+        top+=delta*60;
+        (top<=0)||(top=0);
+        (top>-($("#infoP").children().length*100-500))||(top=-($("#infoP").children().length*100-500));
+        $(".divinfo").css({top:top+"px"});
+    });
 
-
+    $(".divinfo").click(function(){
+        $(".divinfo.active").attr("class","divinfo");
+        $(this).attr("class","divinfo active");
+    })
 })
 
 function tab_click(id){
