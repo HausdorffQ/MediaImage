@@ -132,6 +132,23 @@ $(document).ready(function () {
         $(".divinfo.active").attr("class", "divinfo");
         $(this).attr("class", "divinfo active");
     })
+
+    $(".divinfo").dblclick(function(){
+        $("#infoP").hide();
+        $("#patient_detail").show();
+        $("#sel_patient").empty();
+        $("#sel_patient").append($(this).clone(true));
+    })
+
+    $("#sel_back").click(function(){
+        $("#patient_detail").hide();
+        $("#infoP").show();
+    })
+
+    $("#sel_sure").click(function(){
+        $("#patient_detail").hide();
+        $("#infoP").show();
+    })
 })
 
 function tab_click(id) {
