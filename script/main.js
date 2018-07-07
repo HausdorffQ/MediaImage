@@ -122,7 +122,7 @@ $(document).ready(function () {
         var top = parseInt($(".divinfo").css("top"));
         top += delta * 60;
         (top <= 0) || (top = 0);
-        (top > -($("#infoP").children().length * 100 - 500)) || (top = -($("#infoP").children().length * 100 - 500));
+        (top > -($("#infoP").children().length * 50 - 250)) || (top = -($("#infoP").children().length * 50 - 250));
         $(".divinfo").css({
             top: top + "px"
         });
