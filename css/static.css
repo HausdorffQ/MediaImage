@@ -247,3 +247,35 @@ p {
     float:left;
     background-color:#000;
 }
+
+.title{
+    width:94%;
+    margin-left:3%;
+    margin-top:10px;
+    margin-bottom: 10px;
+    height:30px;
+    background-color:#2d2d2d;
+    
+}
+
+.titletext{
+    margin-top:10px;
+    text-align:center;
+    font-size:1.4em;
+    color:#696969;
+}
+
+select{
+    outline: 0;
+    width:94%;
+    height:30px;
+    margin-left:3%;
+    background:#2d2d2d;
+    border:0px;
+    color:lightgreen;
+}
+
+option{
+    text-align: center;
+    outline:0;
+}
